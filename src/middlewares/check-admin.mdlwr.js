@@ -1,4 +1,4 @@
-import User from '../databases/user.database.js';
+const User = require('../databases/user.database');
 
 // Middleware pour vérifier le statut d'administrateur de l'utilisateur
 const checkAdmin = async (req, res, next) => {

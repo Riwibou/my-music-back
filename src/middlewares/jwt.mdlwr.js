@@ -1,7 +1,7 @@
-// src/middlewares/jwt.mdlwr.js
-import jwt from 'jsonwebtoken';
 
-const jwtOptions = { expiresIn: '8h' }; // 8 heures
+const jwt = require('jsonwebtoken');
+
+const jwtOptions = { expiresIn: '8h' };
 const secret = process.env.JWT_SECRET || 'T0P_S3CRet';
 
 // Middleware pour la vérification du token JWT dans les requêtes
@@ -34,6 +34,7 @@ const jwtVerify = (token) => {
 };
 
 // Fonction pour créer un nouveau token JWT
-export const jwtSign = (data) => jwt.sign({ data }, secret, jwtOptions);
+const jwtSign = (data) => jwt.sign({ data }, secret, jwtOptions);
 
-export default jwtMdlwr;
+module.exports = jwtMdlwr;
+module.exports.jwtSign = jwtSign;
