@@ -1,4 +1,3 @@
-// src/controllers/user.controller.js
 const { User } = require('../databases/user.database');
 
 exports.addUser = async (req, res) => {

@@ -1,4 +1,3 @@
-// src/controllers/blog.controller.js
 const { Blog } = require('../databases/blog.database');
 const { cloudinary } = require('../config/cloudinary.config');
 const multer = require('multer');
