@@ -2,7 +2,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const express = require("express");
 
-// Fonction pour initialiser les middlewares 
+// Fonction pour initialiser les middlewares
 const initMiddlewares = (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));

@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./src/databases/init.database");
 const initRoutes = require("./src/routes/init.routes");
-const initMiddlewares = require("./src/middlewares/init.middleware");
+const initMiddlewares = require("./src/middlewares/init.mdlwr");
 const jwtMdlwr = require("./src/middlewares/jwt.mdlwr");
 const checkAdmin = require("./src/middlewares/check-admin.mdlwr");
 

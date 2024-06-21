@@ -21,4 +21,5 @@ const checkAdmin = async (req, res, next) => {
   }
 };
 
-export default checkAdmin;
+
+module.exports = checkAdmin;
