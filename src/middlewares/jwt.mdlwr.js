@@ -37,4 +37,4 @@ const jwtVerify = (token) => {
 const jwtSign = (data) => jwt.sign({ data }, secret, jwtOptions);
 
 module.exports = jwtMdlwr;
-module.exports.jwtSign = jwtSign;
+module.exports = jwtSign;
