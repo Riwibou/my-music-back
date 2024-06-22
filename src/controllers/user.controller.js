@@ -3,6 +3,7 @@ const { jwtSign } = require("../middlewares/jwt.mdlwr");
 const bcrypt = require("bcrypt");
 const { isEmail } = require("validator");
 const jwt = require("jsonwebtoken");
+// installer joi, securiser les entree des user dans les form, appeler joi, verifier copilot avis
 
 exports.addUser = async (req, res) => {
   try {
@@ -14,8 +15,19 @@ exports.addUser = async (req, res) => {
   }
 };
 
+const signUpSchema = Joi.object({
+  name: Joi.string().min(3).max(30).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required()
+});
+
 exports.signUp = async (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { name, email, password } = req.body;
+
+  const { error } = signUpSchema.validate({ name, email, password });
+  if (error) {
+    return res.status(400).send({ error: error.details[0].message });
+  }
 
   if (!email || !isEmail(email)) {
     return res.status(400).send({ error: "Email is required or invalid" });
@@ -42,7 +54,7 @@ exports.signUp = async (req, res) => {
     name,
     email,
     password: hashedPassword,
-    role: role || "user",
+    role: "user",
   });
 
   try {

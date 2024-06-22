@@ -36,5 +36,7 @@ const jwtVerify = (token) => {
 // Fonction pour créer un nouveau token JWT
 const jwtSign = (data) => jwt.sign({ data }, secret, jwtOptions);
 
-module.exports = jwtMdlwr;
-module.exports = jwtSign;
+module.exports = {
+  jwtMdlwr,
+  jwtSign
+}
