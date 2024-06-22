@@ -1,4 +1,3 @@
-
 const jwt = require('jsonwebtoken');
 
 const jwtOptions = { expiresIn: '8h' };
@@ -21,7 +20,7 @@ const jwtMdlwr = (req, res, next) => {
   next();
 };
 
-// Fonction pour vérifier et décrypter un token JWT
+// Fonction pour vérifier et déchiffrer un token JWT
 const jwtVerify = (token) => {
   try {
     const decoded = jwt.verify(token, secret);
@@ -39,4 +38,4 @@ const jwtSign = (data) => jwt.sign({ data }, secret, jwtOptions);
 module.exports = {
   jwtMdlwr,
   jwtSign
-}
+};
