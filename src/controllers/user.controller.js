@@ -3,7 +3,7 @@ const { jwtSign } = require("../middlewares/jwt.mdlwr");
 const bcrypt = require("bcrypt");
 const { isEmail } = require("validator");
 const jwt = require("jsonwebtoken");
-// installer joi, securiser les entree des user dans les form, appeler joi, verifier copilot avis
+const Joi = require("joi");
 
 exports.addUser = async (req, res) => {
   try {
