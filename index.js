@@ -20,6 +20,8 @@ initMiddlewares(app);
 
 // Utilisation du middleware JWT pour toutes les routes sauf celles spécifiées
 app.use('/api/*', jwtMdlwr);
+// test
+// app.use('/api/private',jwtMdlwr);
 
 // Initialisation des routes
 initRoutes(app);
